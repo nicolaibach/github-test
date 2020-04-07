@@ -1,3 +1,3 @@
-export default () => {
-  console.log("Hello World");
+export default (who = "world") => {
+  console.log(`Hello ${who}`);
 };
