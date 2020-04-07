@@ -1,6 +1,6 @@
 {
   "name": "@nicolaibach/github-test",
-  "version": "0.0.5-0",
+  "version": "0.0.5-beta.0",
   "description": "Just a test project",
   "type": "module",
   "main": "index.js",
