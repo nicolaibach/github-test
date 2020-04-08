@@ -11,7 +11,7 @@
     "build": "shx mkdir -p ./dist && shx cp ./index.js ./dist/index.js",
     "build:clean": "shx rm -rf ./dist",
     "releasenotes": "node --experimental-json-modules ./scripts/releasenotes.js > ./RELEASENOTES.md",
-    "preversion": "npm run test",
+    "preversion": "",
     "version": "npm run releasenotes && git add .",
     "postversion": "hub release create $npm_package_version --file ./RELEASENOTES.md",
     "foo": "echo $npm_package_version",
