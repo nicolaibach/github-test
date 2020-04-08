@@ -2,12 +2,22 @@
 
 // "use strict";
 
-import pkg from "../package.json";
+const { npm_package_version } = process.env;
 
 const main = () => {
-  const content = `${pkg.version}
+  const content = `${npm_package_version}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+## Foo ...
+
+- in voluptate
+- in cillum
+- in occaecat
+- in Excepteur
+
+## Foo ...
 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
