@@ -11,9 +11,10 @@
     "build": "shx mkdir -p ./dist && shx cp ./index.js ./dist/index.js",
     "build:clean": "shx rm -rf ./dist",
     "releasenotes": "node ./scripts/releasenotes.js > ./RELEASENOTES.md",
-    "preversion": "",
-    "version": "npm run releasenotes && git add .",
-    "postversion": "hub release create $npm_package_version --file ./RELEASENOTES.md",
+    "preversion": "echo $npm_package_version",
+    "version": "echo $npm_package_version && npm run releasenotes && git add .",
+    "postversion": "echo $npm_package_version",
+    "notpostversion": "hub release create -p $npm_package_version --file ./RELEASENOTES.md",
     "foo": "echo $npm_package_version",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
