@@ -3,20 +3,21 @@
   "version": "3.6.0-beta.0",
   "description": "Just a test project",
   "type": "module",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "files": [
-    "index.js"
+    "dist/"
   ],
   "scripts": {
     "build": "shx mkdir -p ./dist && shx cp ./index.js ./dist/index.js",
     "build:clean": "shx rm -rf ./dist",
     "releasenotes": "node ./scripts/releasenotes.js > ./RELEASENOTES.md",
     "preversion": "",
-    "version": "npm run releasenotes && git add .",
+    "version": "npm run build && npm run releasenotes && git add .",
     "postversion": "git push && npm run gitrelease",
-    "gitrelease": "hub release create -p $npm_package_version --file ./RELEASENOTES.md",
+    "gitrelease": "hub release create -p v${npm_package_version} --file ./RELEASENOTES.md",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "betarelease": "npm version preminor --preid beta --message \"v%s\""
+    "betarelease": "npm version prerelease --preid beta --message \"v%s\"",
+    "foo": "echo v${npm_package_version}"
   },
   "repository": {
     "type": "git",
