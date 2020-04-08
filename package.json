@@ -13,9 +13,8 @@
     "releasenotes": "node ./scripts/releasenotes.js > ./RELEASENOTES.md",
     "preversion": "echo $npm_package_version",
     "version": "echo $npm_package_version && npm run releasenotes && git add .",
-    "postversion": "echo $npm_package_version",
-    "notpostversion": "hub release create -p $npm_package_version --file ./RELEASENOTES.md",
-    "foo": "echo $npm_package_version",
+    "postversion": "npm run gitrelease",
+    "gitrelease": "hub release create -p $npm_package_version --file ./RELEASENOTES.md",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
