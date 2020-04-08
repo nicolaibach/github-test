@@ -8,6 +8,12 @@
     "index.js"
   ],
   "scripts": {
+    "build": "shx mkdir -p ./dist && shx cp ./index.js ./dist/index.js",
+    "build:clean": "shx rm -rf ./dist",
+    "releasenotes": "node --experimental-json-modules ./scripts/releasenotes.js > ./RELEASENOTES.md",
+    "preversion": "git add .",
+    "version": "npm run releasenotes",
+    "postversion": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/nicolaibach/github-test/issues"
   },
-  "homepage": "https://github.com/nicolaibach/github-test#readme"
+  "homepage": "https://github.com/nicolaibach/github-test#readme",
+  "devDependencies": {
+    "shx": "^0.3.2"
+  }
 }
