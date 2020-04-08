@@ -1,4 +1,4 @@
-3.2.1-beta.4
+3.3.0
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
