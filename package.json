@@ -12,7 +12,7 @@
     "build:clean": "shx rm -rf ./dist",
     "releasenotes": "node --experimental-json-modules ./scripts/releasenotes.js > ./RELEASENOTES.md",
     "preversion": "npm run test",
-    "version": "npm run releasenotes",
+    "version": "npm run releasenotes && git add .",
     "postversion": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
