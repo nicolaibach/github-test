@@ -1,4 +1,4 @@
-3.5.0-beta.0
+3.6.0-beta.0
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
