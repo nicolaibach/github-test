@@ -13,7 +13,8 @@
     "releasenotes": "node --experimental-json-modules ./scripts/releasenotes.js > ./RELEASENOTES.md",
     "preversion": "npm run test",
     "version": "npm run releasenotes && git add .",
-    "postversion": "",
+    "postversion": "hub release create $npm_package_version --file ./RELEASENOTES.md",
+    "foo": "echo $npm_package_version",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
