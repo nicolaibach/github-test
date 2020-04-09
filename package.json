@@ -13,11 +13,12 @@
     "releasenotes": "node ./scripts/releasenotes.js > ./RELEASENOTES.md",
     "preversion": "",
     "version": "npm run build && npm run releasenotes && git add .",
-    "postversion": "git push && npm run gitrelease",
-    "gitrelease": "hub release create -p v${npm_package_version} --file ./RELEASENOTES.md",
+    "postversion": "git push && npm run npmpack && npm run gitrelease",
+    "gitrelease": "hub release create -p v${npm_package_version} --attach $(cat ./PACK.md)  --file ./RELEASENOTES.md",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prebetarelease": "git commit -a -m \"bot cleanup\"",
     "betarelease": "npm version prerelease --preid beta --message \"v%s\"",
-    "foo": "echo v${npm_package_version}"
+    "npmpack": "npm pack > PACK.md"
   },
   "repository": {
     "type": "git",
